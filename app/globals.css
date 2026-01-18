@@ -3,6 +3,15 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Escoturs Brand Colors */
+  --escoturs-green: #5CAE52;
+  --escoturs-green-dark: #4a9643;
+  --escoturs-green-light: #A6D384;
+  --escoturs-red: #D3392D;
+  --escoturs-blue: #5BB3E2;
+  --escoturs-yellow: #F2ED52;
+  --escoturs-white: #ffffff;
 }
 
 @theme inline {
@@ -10,17 +19,36 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Escoturs colors for Tailwind */
+  --color-escoturs-green: #5CAE52;
+  --color-escoturs-green-dark: #4a9643;
+  --color-escoturs-green-light: #A6D384;
+  --color-escoturs-red: #D3392D;
+  --color-escoturs-blue: #5BB3E2;
+  --color-escoturs-yellow: #F2ED52;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Logo Carousel Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-carousel {
+  animation: scroll-left 20s linear infinite;
+}
+
+.logo-carousel:hover {
+  animation-play-state: paused;
 }
